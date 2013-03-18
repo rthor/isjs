@@ -38,7 +38,7 @@ Email address.
 
 Validattes both ISBN10 and ISBN13.
 
-**latlong**
+**latlng**
 
 Latitude and longitude.
 
@@ -53,10 +53,10 @@ Formats include:
 
 ## One more thing.
 
-The expression argument can be an actual regular expression. 
+The expression argument can be an actual regular expression.
 
 	is('love', /.+/) // returns true
-	
+
 ## Get in touch
 
 Follow me on twitter [@rthor](http://twitter.com/rthor) or send me a line in an [email](mailto:ragnar@ylgur.is).
