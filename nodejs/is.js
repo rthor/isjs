@@ -5,7 +5,7 @@
  * URL: http://github.com/rthor/isjs
  * License: MIT
  */
-(function() {
+module.exports =(function() {
 	// All regexes that can be tested against.
 	regex = {
 		cc: /^[0-9]{16}$/,
