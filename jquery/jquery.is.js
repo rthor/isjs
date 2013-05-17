@@ -1,12 +1,21 @@
 (function($) {
 	// What does the is plugin do?
 	$.is = $.fn.is = function() {
+		// If nothing is there - then return that.
 		if ( this.length === 0 ) return this;
+
+		// Declare variables
 		var value, expression, regex;
 
+		// If plugin is run on the root jQuery object
+		// Set up appropriate variables
 		if (arguments.length === 2) {
 			value = arguments[0];
 			expression = arguments[1];
+
+		// Else if the plugin is run on an DOM element
+		// Set up the correct expression and value based on
+		// node type.
 		} else {
 			var nodeName = this[0].nodeName.toLowerCase();
 			expression = arguments[0];
@@ -18,6 +27,7 @@
 				this.selector;
 		}
 
+		// All regexes that can be tested against.
 		regex = {
 			cc: /^[0-9]{16}$/,
 			datetime: /^([0-2][0-9]{3})\-([0-1][0-9])\-([0-3][0-9])T([0-5][0-9])\:([0-5][0-9])\:([0-5][0-9])(Z|([\-\+]([0-1][0-9])\:00))$/,
@@ -37,10 +47,12 @@
 			return expression.test( value.trim() );
 		}
 
+		// If the expression is in the regex object
 		if (regex.hasOwnProperty(expression)) {
 			return test(value, regex[expression]);
 		}
 
+		// If the expression is a true regular expression
 		if (typeof expression === 'object') {
 			return test(value, expression);
 		}
