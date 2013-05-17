@@ -56,6 +56,9 @@
 		if (typeof expression === 'object') {
 			return test(value, expression);
 		}
+
+		// Return false if everything fails.
+		return false;
 	};
 
 })(jQuery);
