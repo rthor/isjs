@@ -8,6 +8,16 @@
     "email": "ragnar.valgeirsson@gmail.com",
     "url": "http://rthor.is"
   },
+  "main": "nodejs/is.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rthor/isjs.git"
+  },
+  "keywords": [
+    "regexp",
+    "test",
+    "simple"
+  ],
   "description": "Check your data against regual expressions. Diffrent versions for different platforms are availible.",
   "devDependencies": {
     "grunt": "~0.4.1",

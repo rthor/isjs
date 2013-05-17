@@ -5,7 +5,8 @@
  * URL: http://github.com/rthor/isjs
  * License: MIT
  */
-module.exports =(function() {
+module.exports = function ( elem, expression ) {
+
 	// All regexes that can be tested against.
 	regex = {
 		cc: /^[0-9]{16}$/,
@@ -34,20 +35,15 @@ module.exports =(function() {
 		return expression.test( value.trim() );
 	}
 
-    /**
-     * Make the is function globally avalible.
-     */
-    window.is = function( elem, expression ) {
-        if (typeof expression === undefined) return false;
+    if (typeof expression === undefined) return false;
 
-        if (regex.hasOwnProperty(expression)) {
-            return test(elem, regex[expression]);
-        }
+    if (regex.hasOwnProperty(expression)) {
+        return test(elem, regex[expression]);
+    }
 
-        if (typeof expression === 'object') {
-            return test(elem, expression);
-        }
+    if (typeof expression === 'object') {
+        return test(elem, expression);
+    }
 
-        return false;
-    };
-})();
+    return false;
+};

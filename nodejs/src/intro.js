@@ -1,1 +1,1 @@
-module.exports =
+module.exports = function ( elem, expression ) {
