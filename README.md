@@ -6,8 +6,7 @@ Currently these *plugins* are stable:
 
 - jQuery
 - Vanilla JavaScript (untested)
-
-Node.js module is in development.
+- Node.js Module (untested)
 
 ## Get in touch
 
