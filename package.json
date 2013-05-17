@@ -1,6 +1,6 @@
 {
   "name": "isjs",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "license": "MIT",
   "homepage": "http://github.com/rthor/isjs",
   "author": {
@@ -9,6 +9,7 @@
     "url": "http://rthor.is"
   },
   "main": "nodejs/is.js",
+  "readmeFilename": "nodejs/README.md",
   "repository": {
     "type": "git",
     "url": "git://github.com/rthor/isjs.git"
