@@ -2,6 +2,7 @@
 	// What does the is plugin do?
 	$.fn.is = function( expression ) {
 		var nodeName = this[0].nodeName.toLowerCase(), value, regex;
+		console.log( this );
 
 		value = nodeName === 'input' ?
 			this.val() :
