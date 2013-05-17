@@ -2,6 +2,7 @@
   "name": "isJS",
   "version": "0.0.5",
   "license": "MIT",
+  "homepage": "http://github.com/rthor/isjs",
   "author": {
     "name": "Ragnar Þór Valgeirsson",
     "email": "ragnar.valgeirsson@gmail.com",
@@ -10,6 +11,7 @@
   "description": "Check your data against regual expressions. Diffrent versions for different platforms are availible.",
   "devDependencies": {
     "grunt": "~0.4.1",
-    "grunt-contrib-uglify": "~0.2.0"
+    "grunt-contrib-uglify": "~0.2.0",
+    "grunt-contrib-concat": "~0.3.0"
   }
 }
