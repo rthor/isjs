@@ -1,14 +1,21 @@
 (function($) {
 	// What does the is plugin do?
-	$.fn.is = function( expression ) {
-		var nodeName = this[0].nodeName.toLowerCase(), value, regex;
-		console.log( this );
+	$.is = $.fn.is = function() {
+		var value, expression, regex;
 
-		value = nodeName === 'input' ?
-			this.val() :
-			nodeName === 'p' || nodeName === 'h1' || nodeName === 'h2' || nodeName === 'h3' || nodeName === 'h4' || nodeName === 'h5' || nodeName === 'h6' || nodeName === 'a' || nodeName === 'li' || nodeName === 'blockquote' || nodeName === 'pre' || nodeName === 'b' || nodeName === 'i' || nodeName === 'div' || nodeName === 'button' || nodeName === 'textarea' || nodeName === 'span' ?
-			this.html() :
-			this.selector;
+		if (arguments.length === 2) {
+			value = arguments[0];
+			expression = arguments[1];
+		} else {
+			var nodeName = this[0].nodeName.toLowerCase();
+			expression = arguments[0];
+
+			value = nodeName === 'input' ?
+				this.val() :
+				nodeName === 'p' || nodeName === 'h1' || nodeName === 'h2' || nodeName === 'h3' || nodeName === 'h4' || nodeName === 'h5' || nodeName === 'h6' || nodeName === 'a' || nodeName === 'li' || nodeName === 'blockquote' || nodeName === 'pre' ||  nodeName === 'code' || nodeName === 'b' ||  nodeName === 'strong' ||  nodeName === 'em' || nodeName === 'i' || nodeName === 'div' || nodeName === 'button' || nodeName === 'textarea' || nodeName === 'span' ?
+				this.html() :
+				this.selector;
+		}
 
 		regex = {
 			cc: /^[0-9]{16}$/,

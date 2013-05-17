@@ -1,7 +1,6 @@
 {
-    "framework": "mocha",
+    "framework": "qunit",
     "src_files": [
-    	"tests/chai.js",
     	"tests/jquery.js",
     	"jquery.is.js",
     	"tests/jquery.is.js"
