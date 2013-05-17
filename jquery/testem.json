@@ -3,6 +3,6 @@
     "src_files": [
     	"tests/jquery.js",
     	"jquery.is.js",
-    	"tests/jquery.is.js"
+    	"tests/is.js"
     ]
 }

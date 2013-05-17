@@ -7,5 +7,5 @@ test('Works when the value is as value', function() {
 	ok( p.is('email') , 'works on input tags' );
 });
 test('Works on strings', function() {
-	ok( $.is('john.doe@company.com', 'email') , 'works on input tags' );
+	ok( $.is('john.doe@company.com', 'email') , 'works on strings' );
 });
