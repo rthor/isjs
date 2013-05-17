@@ -1,6 +1,7 @@
 (function($) {
 	// What does the is plugin do?
 	$.is = $.fn.is = function() {
+		if ( this.length === 0 ) return this;
 		var value, expression, regex;
 
 		if (arguments.length === 2) {
