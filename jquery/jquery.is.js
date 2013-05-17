@@ -1,3 +1,8 @@
+/**
+ * isJS
+ * Created by: Ragnar Þór Valgeirsson (rthor)
+ * License: MIT
+ */
 (function($) {
 	// What does the is plugin do?
 	$.is = $.fn.is = function() {
