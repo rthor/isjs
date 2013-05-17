@@ -16,8 +16,10 @@ module.exports = function (grunt) {
 				separator: ''
 			},
 			dist: {
-				src: ['jquery/src/intro.js', 'src/regexes.js', 'jquery/src/outro.js'],
-				dest: 'jquery/jquery.is.js'
+				files: {
+					'jquery/jquery.is.js': ['jquery/src/intro.js', 'jquery/src/nonroot.js', 'src/regexes.js', 'src/test.js', 'jquery/src/outro.js'],
+					'vanilla/is.js': ['vanilla/src/intro.js', 'src/regexes.js', 'src/trim.js', 'src/test.js', 'vanilla/src/outro.js']
+				}
 			}
 		},
 		uglify: {
