@@ -17,6 +17,16 @@ describe('Works when the value is as html', function() {
 });
 
 describe("Regexes", function() {
+	describe("Phone numbers", function() {
+		it("Iceland - format: ###-####", function() {
+			$.is('1212525', 'phone').should.be.true;
+			$.is('121 2525', 'phone').should.be.true;
+			$.is('121 -2525', 'phone').should.be.true;
+			$.is('121- 2525', 'phone').should.be.true;
+			$.is('121 - 2525', 'phone').should.be.true;
+			$.is('121-2525', 'phone').should.be.true;
+		});
+	});
 	describe("Zip codes for countries", function() {
 		it("Australia - format: ####", function() {
 			$.is('1122', 'zip:au').should.be.true;
