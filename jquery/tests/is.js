@@ -27,6 +27,13 @@ describe("Regexes", function() {
 			$.is('121-2525', 'phone').should.be.true;
 		});
 	});
+
+	describe("Credit cards", function() {
+		it("Works for credit cards", function() {
+			$.is('1234123412341234', 'cc').should.be.true;
+		});
+	});
+
 	describe("Zip codes for countries", function() {
 		it("Australia - format: ####", function() {
 			$.is('1122', 'zip:au').should.be.true;
