@@ -1,17 +1,27 @@
-test('Works when the value is as html', function() {
-	var p = $('</p>').text('john.doe@company.com');
-	ok( p.is('email') , 'works on p tags' );
-});
-test('Works when the value is as value', function() {
-	var p = $('<input>').val('john.doe@company.com');
-	ok( p.is('email') , 'works on input tags' );
-});
-test('Works on strings', function() {
-	ok( $.is('john.doe@company.com', 'email') , 'works on strings' );
+chai.should();
+
+describe('Works when the value is as html', function() {
+	it("should work on paragraph elements", function() {
+		var p = $('</p>').text('john.doe@company.com');
+		p.is('email').should.be.true;
+	});
+
+	it('should work on input elements', function() {
+		var input = $('<input>').val('john.doe@company.com');
+		input.is('email').should.be.true;
+	});
+
+	it("should work on strings", function() {
+		$.is('john.doe@company.com', 'email').should.be.true;
+	});
 });
 
-test('Zip codes should work', function() {
-	ok( ! $.is('12', 'zip:is'), 'should fail' );
-	ok( $.is('112', 'zip:is'), 'should work' );
-	ok( ! $.is('112145', 'zip:is'), 'should fail' );
+describe("Regexes", function() {
+	describe("Zip codes for countries", function() {
+		it("Iceland - format: ###", function() {
+			$.is('12', 'zip:is').should.be.false;
+			$.is('112', 'zip:is').should.be.true;
+			$.is('1122', 'zip:is').should.be.false;
+		});
+	});
 });
