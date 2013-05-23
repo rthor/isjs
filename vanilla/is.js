@@ -1,4 +1,4 @@
-/** 
+/**
  * is.js
  * Version: 0.1.0
  * Created by: Ragnar Þór Valgeirsson (rthor)
@@ -59,6 +59,16 @@
      */
     window.is = function( elem, expression ) {
         if (typeof expression === undefined) return false;
+
+        // If expression is deep
+        if (
+			typeof expression === 'string' &&
+			expression.indexOf(':') !== -1
+        ) {
+			expression = expression.match( /(\w+)(?:\:)(\w+)/ );
+			deep = expression[2];
+			expression = expression[1];
+		}
 
         if (regex.hasOwnProperty(expression)) {
             return test(elem, regex[expression]);
