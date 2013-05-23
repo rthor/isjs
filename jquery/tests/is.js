@@ -9,3 +9,9 @@ test('Works when the value is as value', function() {
 test('Works on strings', function() {
 	ok( $.is('john.doe@company.com', 'email') , 'works on strings' );
 });
+
+test('Zip codes should work', function() {
+	ok( ! $.is('12', 'zip:is'), 'should fail' );
+	ok( $.is('112', 'zip:is'), 'should work' );
+	ok( ! $.is('112145', 'zip:is'), 'should fail' );
+});

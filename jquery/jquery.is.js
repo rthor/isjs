@@ -1,4 +1,4 @@
-/** 
+/**
  * is.js
  * Version: 0.1.0
  * Created by: Ragnar Þór Valgeirsson (rthor)
@@ -12,7 +12,7 @@ $.is = $.fn.is = function() {
 	if ( this.length === 0 ) return this;
 
 	// Declare variables
-	var value, expression, regex;
+	var value, expression, deep = false, regex;
 
 	// If plugin is run on the root jQuery object
 	// Set up appropriate variables
@@ -34,6 +34,16 @@ $.is = $.fn.is = function() {
 			this.selector;
 	}
 
+	// If expression is deep
+	if (
+		typeof expression === 'string' &&
+		expression.indexOf(':') !== -1
+	) {
+		expression = expression.match( /(\w+)(?:\:)(\w+)/ );
+		deep = expression[2];
+		expression = expression[1];
+	}
+
 	// All regexes that can be tested against.
 	regex = {
 		cc: /^[0-9]{16}$/,
@@ -41,7 +51,27 @@ $.is = $.fn.is = function() {
 		email: /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
 		isbn: /^(?:(?=.{17}$)97[89][ -](?:[0-9]+[ -]){2}[0-9]+[ -][0-9]|97[89][0-9]{10}|(?=.{13}$)(?:[0-9]+[ -]){2}[0-9]+[ -][0-9Xx]|[0-9]{9}[0-9Xx])$/,
 		latlng: /-?\d{1,3}\.\d+/,
-		phone: /^(?:\+\d{3}\s?)?\d{3}[ ]?[-]?[ ]?\d{4}$/
+		phone: /^(?:\+\d{3}\s?)?\d{3}[ ]?[-]?[ ]?\d{4}$/,
+		zip: {
+			'at': /^\d{4}$/,
+			'au': /^\d{4}$/,
+			'be': /^\d{4}$/,
+			'br': /^\d{5}[\-]?\d{3}$/,
+			'ca': /^[A-Za-z]\d[A-Za-z] \d[A-Za-z]\d$/,
+			'de': /^\d{5}$/,
+			'dk': /^\d{3,4}$/,
+			'es': /^((0[1-9]|5[0-2])|[1-4]\d)\d{3}$/,
+			'gb': /^[A-Za-z]{1,2}[0-9Rr][0-9A-Za-z]? \d[ABD-HJLNP-UW-Zabd-hjlnp-uw-z]{2}$/,
+			'hu': /^\d{4}$/,
+			'is': /^\d{3}$/,
+			'it': /^\d{5}$/,
+			'jp': /^\d{3}-\d{4}$/,
+			'lu': /^(L\s*(-|—|–))\s*?[\d]{4}$/,
+			'nl': /^[1-9]\d{3}\s?[a-zA-Z]{2}$/,
+			'pl': /^\d{2}\-\d{3}$/,
+			'se': /^\d{3}\s?\d{2}$/,
+			'us': /^(\d{5}([\-]\d{4})?)$/
+		}
 	};
 
 	/**
@@ -56,7 +86,8 @@ $.is = $.fn.is = function() {
 
 	// If the expression is in the regex object
 	if (regex.hasOwnProperty(expression)) {
-		return test(value, regex[expression]);
+		console.log( deep ? regex[expression][deep] : regex[expression] );
+		return test(value, deep ? regex[expression][deep] : regex[expression]);
 	}
 
 	// If the expression is a true regular expression

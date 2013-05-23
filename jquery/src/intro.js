@@ -5,7 +5,7 @@ $.is = $.fn.is = function() {
 	if ( this.length === 0 ) return this;
 
 	// Declare variables
-	var value, expression, regex;
+	var value, expression, deep = false, regex;
 
 	// If plugin is run on the root jQuery object
 	// Set up appropriate variables
