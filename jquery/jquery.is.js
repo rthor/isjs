@@ -1,4 +1,4 @@
-/**
+/** 
  * is.js
  * Version: 0.1.0
  * Created by: Ragnar Þór Valgeirsson (rthor)
@@ -53,24 +53,24 @@ $.is = $.fn.is = function() {
 		latlng: /-?\d{1,3}\.\d+/,
 		phone: /^(?:\+\d{3}\s?)?\d{3}[ ]?[-]?[ ]?\d{4}$/,
 		zip: {
-			'at': /^\d{4}$/,
+			'us': /^(\d{5}([\-]\d{4})?)$/,
 			'au': /^\d{4}$/,
+			'at': /^\d{4}$/,
 			'be': /^\d{4}$/,
 			'br': /^\d{5}[\-]?\d{3}$/,
 			'ca': /^[A-Za-z]\d[A-Za-z] \d[A-Za-z]\d$/,
-			'de': /^\d{5}$/,
 			'dk': /^\d{3,4}$/,
-			'es': /^((0[1-9]|5[0-2])|[1-4]\d)\d{3}$/,
-			'gb': /^[A-Za-z]{1,2}[0-9Rr][0-9A-Za-z]? \d[ABD-HJLNP-UW-Zabd-hjlnp-uw-z]{2}$/,
+			'de': /^\d{5}$/,
+			'nl': /^[1-9]\d{3}\s?[a-zA-Z]{2}$/,
 			'hu': /^\d{4}$/,
 			'is': /^\d{3}$/,
 			'it': /^\d{5}$/,
 			'jp': /^\d{3}-\d{4}$/,
 			'lu': /^(L\s*(-|—|–))\s*?[\d]{4}$/,
-			'nl': /^[1-9]\d{3}\s?[a-zA-Z]{2}$/,
 			'pl': /^\d{2}\-\d{3}$/,
+			'es': /^((0[1-9]|5[0-2])|[1-4]\d)\d{3}$/,
 			'se': /^\d{3}\s?\d{2}$/,
-			'us': /^(\d{5}([\-]\d{4})?)$/
+			'gb': /^[A-Za-z]{1,2}[0-9Rr][0-9A-Za-z]? \d[ABD-HJLNP-UW-Zabd-hjlnp-uw-z]{2}$/
 		}
 	};
 
@@ -86,7 +86,6 @@ $.is = $.fn.is = function() {
 
 	// If the expression is in the regex object
 	if (regex.hasOwnProperty(expression)) {
-		console.log( deep ? regex[expression][deep] : regex[expression] );
 		return test(value, deep ? regex[expression][deep] : regex[expression]);
 	}
 

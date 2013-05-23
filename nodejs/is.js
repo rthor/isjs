@@ -6,6 +6,17 @@
  * License: MIT
  */
 module.exports = function ( elem, expression ) {
+	var deep = false;
+
+	// If expression is deep
+	if (
+		typeof expression === 'string' &&
+		expression.indexOf(':') !== -1
+	) {
+		expression = expression.match( /(\w+)(?:\:)(\w+)/ );
+		deep = expression[2];
+		expression = expression[1];
+	}
 
 	// All regexes that can be tested against.
 	regex = {
@@ -58,7 +69,7 @@ module.exports = function ( elem, expression ) {
     if (typeof expression === undefined) return false;
 
     if (regex.hasOwnProperty(expression)) {
-        return test(elem, regex[expression]);
+        return test(elem, deep ? regex[expression][deep] : regex[expression]);
     }
 
     if (typeof expression === 'object') {

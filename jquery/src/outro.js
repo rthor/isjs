@@ -1,7 +1,6 @@
 
 	// If the expression is in the regex object
 	if (regex.hasOwnProperty(expression)) {
-		console.log( deep ? regex[expression][deep] : regex[expression] );
 		return test(value, deep ? regex[expression][deep] : regex[expression]);
 	}
 
