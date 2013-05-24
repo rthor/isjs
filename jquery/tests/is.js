@@ -42,6 +42,16 @@ describe("Regexes", function() {
 		});
 	});
 
+	describe("Latitude and longitude", function() {
+		it("Latitude", function() {
+			$.is('64.163296', 'latlng');
+		});
+
+		it("Longitude", function() {
+			$.is('-21.859328', 'latlng');
+		});
+	});
+
 	describe("Phone numbers", function() {
 		it("Iceland - format: ###-####", function() {
 			$.is('1212525', 'phone').should.be.true;
