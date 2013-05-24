@@ -17,6 +17,19 @@ describe('Works when the value is as html', function() {
 });
 
 describe("Regexes", function() {
+
+	describe("Credit cards", function() {
+		it("Works for credit cards", function() {
+			$.is('1234123412341234', 'cc').should.be.true;
+		});
+	});
+
+	describe("Date and time", function() {
+		it("Format: 1996-12-19T16:39:57-08:00", function() {
+			$.is('1996-12-19T16:39:57-08:00', 'datetime').should.be.true;
+		});
+	});
+
 	describe("Phone numbers", function() {
 		it("Iceland - format: ###-####", function() {
 			$.is('1212525', 'phone').should.be.true;
@@ -25,12 +38,6 @@ describe("Regexes", function() {
 			$.is('121- 2525', 'phone').should.be.true;
 			$.is('121 - 2525', 'phone').should.be.true;
 			$.is('121-2525', 'phone').should.be.true;
-		});
-	});
-
-	describe("Credit cards", function() {
-		it("Works for credit cards", function() {
-			$.is('1234123412341234', 'cc').should.be.true;
 		});
 	});
 
