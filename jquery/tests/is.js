@@ -30,6 +30,18 @@ describe("Regexes", function() {
 		});
 	});
 
+	describe("ISBN", function() {
+		it("ISBN 10", function() {
+			$.is('0-85131-041-9', 'isbn').should.be.true;
+			$.is('0851310419', 'isbn').should.be.true;
+		});
+
+		it("ISBN 13", function() {
+			$.is('978-1-56619-909-4', 'isbn').should.be.true;
+			$.is('9781566199094', 'isbn').should.be.true;
+		});
+	});
+
 	describe("Phone numbers", function() {
 		it("Iceland - format: ###-####", function() {
 			$.is('1212525', 'phone').should.be.true;
