@@ -93,6 +93,16 @@ describe("Regular expression keywords", function() {
 			$.is('12345', 'zip:de').should.be.true;
 		});
 
+		it("Great Britain - format: AA#A #AA (or) A#A #AA (or) A# #AA (or) A## #AA (or) AA# #AA (or) AA## #AA", function() {
+			$.is('gj5g 5hh', 'zip:gb').should.be.true;
+			$.is('h7u 5hh', 'zip:gb').should.be.true;
+			$.is('h7 5hh', 'zip:gb').should.be.true;
+			$.is('h76 5hh', 'zip:gb').should.be.true;
+			$.is('hf6 5hh', 'zip:gb').should.be.true;
+			$.is('hf63 5hh', 'zip:gb').should.be.true;
+		});
+
+
 		it("Hungry - format: ####", function() {
 			$.is('1234', 'zip:hu').should.be.true;
 		});
@@ -131,16 +141,6 @@ describe("Regular expression keywords", function() {
 			$.is('12312', 'zip:se').should.be.true;
 			$.is('123 12', 'zip:se').should.be.true;
 		});
-
-		it("United Kingdom - format: AA#A #AA (or) A#A #AA (or) A# #AA (or) A## #AA (or) AA# #AA (or) AA## #AA", function() {
-			$.is('gj5g 5hh', 'zip:gb').should.be.true;
-			$.is('h7u 5hh', 'zip:gb').should.be.true;
-			$.is('h7 5hh', 'zip:gb').should.be.true;
-			$.is('h76 5hh', 'zip:gb').should.be.true;
-			$.is('hf6 5hh', 'zip:gb').should.be.true;
-			$.is('hf63 5hh', 'zip:gb').should.be.true;
-		});
-
 		it("United States of America - format: ##### (or) #####-####", function() {
 			$.is('12135', 'zip:us').should.be.true;
 			$.is('12135-4342', 'zip:us').should.be.true;
