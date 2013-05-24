@@ -1,6 +1,6 @@
 /** 
  * is.js
- * Version: 0.1.0
+ * Version: 0.1.1
  * Created by: Ragnar Þór Valgeirsson (rthor)
  * URL: http://github.com/rthor/isjs
  * License: MIT
@@ -27,7 +27,6 @@ module.exports = function ( elem, expression ) {
 		latlng: /-?\d{1,3}\.\d+/,
 		phone: /^(?:\+\d{3}\s?)?\d{3}[ ]?[-]?[ ]?\d{4}$/,
 		zip: {
-			'us': /^(\d{5}([\-]\d{4})?)$/,
 			'au': /^\d{4}$/,
 			'at': /^\d{4}$/,
 			'be': /^\d{4}$/,
@@ -35,16 +34,17 @@ module.exports = function ( elem, expression ) {
 			'ca': /^[A-Za-z]\d[A-Za-z] \d[A-Za-z]\d$/,
 			'dk': /^\d{3,4}$/,
 			'de': /^\d{5}$/,
-			'nl': /^[1-9]\d{3}\s?[a-zA-Z]{2}$/,
+			'es': /^((0[1-9]|5[0-2])|[1-4]\d)\d{3}$/,
+			'gb': /^[A-Za-z]{1,2}[0-9Rr][0-9A-Za-z]? \d[ABD-HJLNP-UW-Zabd-hjlnp-uw-z]{2}$/,
 			'hu': /^\d{4}$/,
 			'is': /^\d{3}$/,
 			'it': /^\d{5}$/,
 			'jp': /^\d{3}-\d{4}$/,
 			'lu': /^(L\s*(-|—|–))\s*?[\d]{4}$/,
+			'nl': /^[1-9]\d{3}\s?[a-zA-Z]{2}$/,
 			'pl': /^\d{2}\-\d{3}$/,
-			'es': /^((0[1-9]|5[0-2])|[1-4]\d)\d{3}$/,
 			'se': /^\d{3}\s?\d{2}$/,
-			'gb': /^[A-Za-z]{1,2}[0-9Rr][0-9A-Za-z]? \d[ABD-HJLNP-UW-Zabd-hjlnp-uw-z]{2}$/
+			'us': /^(\d{5}([\-]\d{4})?)$/
 		}
 	};
 
