@@ -16,7 +16,7 @@ describe('Works when the value is as html', function() {
 	});
 });
 
-describe("Regexes", function() {
+describe("Regular expression keywords", function() {
 
 	describe("Credit cards", function() {
 		it("Works for credit cards", function() {
