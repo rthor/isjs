@@ -27,7 +27,7 @@ Currently these *plugins* are stable:
 **phone (Phone numbers)**
 - Iceland - format: ###-####
 
-**zip:[two letter ISO 3166 country code] (Zip codes for countries)**
+**zip:'two letter ISO 3166 country code' (Zip codes for countries)**
 - Australia - format: ####
 - Austria - format: ####
 - Belgium - format: ####
