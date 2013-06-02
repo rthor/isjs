@@ -1,6 +1,6 @@
 # is.js jQuery plugin (usage)
 
-See genaral [usage guide](https://github.com/rthor/isjs/README.md) for allowed keywords.
+See genaral [usage guide](https://github.com/rthor/isjs/blob/master/README.md) for allowed keywords.
 
 ```javascript
 // Works on pretty much all DOM elements...
@@ -20,4 +20,4 @@ To run tests make sure you've got [testem](https://github.com/airportyh/testem) 
 
 ### Get in touch
 
-Follow me on twitter [@rthor](http://twitter.com/rthor) or send me a line in an [email](mailto:ragnar.valgeirsson@gmail.com).
+Follow me on twitter [@rthor](http://twitter.com/rthor) or send me a line in an [email](mailto:ragnar.valgeirsson@gmail.comz).
