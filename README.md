@@ -1,6 +1,6 @@
 # is.js
 
-Check your data against regual expressions or known keywords (see Keyword section). Diffrent versions for different platforms are availible.
+Check your data against regular expressions or known keywords (see Keyword section). Diffrent versions for different platforms are availible.
 
 Currently these *plugins* are stable:
 
