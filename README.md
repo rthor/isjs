@@ -116,6 +116,15 @@ is('112', 'zip:is'); // Returns true
 is('32044', 'zip:us'); // Returns true
 ```
 
+## One more thing.
+
+The expression argument can be an actual regular expression.
+
+```javascript
+// Example (vanilla JS)
+is('love', /.+/); // returns true
+```
+
 ## Get in touch
 
 Follow me on twitter [@rthor](http://twitter.com/rthor) or send me a line in an [email](mailto:ragnar.valgeirsson@gmail.com).
