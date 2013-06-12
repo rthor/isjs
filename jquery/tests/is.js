@@ -53,13 +53,13 @@ describe("Regular expression keywords", function() {
 	});
 
 	describe("Phone numbers", function() {
-		it("Iceland - format: ###-####", function() {
-			$.is('1212525', 'phone').should.be.true;
-			$.is('121 2525', 'phone').should.be.true;
-			$.is('121 -2525', 'phone').should.be.true;
-			$.is('121- 2525', 'phone').should.be.true;
-			$.is('121 - 2525', 'phone').should.be.true;
-			$.is('121-2525', 'phone').should.be.true;
+		it("Iceland - format: +354 ###-####", function() {
+			$.is('1212525', 'phone:is').should.be.true;
+			$.is('121 2525', 'phone:is').should.be.true;
+			$.is('121 -2525', 'phone:is').should.be.true;
+			$.is('121- 2525', 'phone:is').should.be.true;
+			$.is('121 - 2525', 'phone:is').should.be.true;
+			$.is('121-2525', 'phone:is').should.be.true;
 		});
 	});
 
