@@ -53,13 +53,19 @@ describe("Regular expression keywords", function() {
 	});
 
 	describe("Phone numbers", function() {
+		it("France", function() {
+			$.is('0423 23 12 24', 'phone:fr');
+			$.is('+33423 23 12 24', 'phone:fr');
+			$.is('0033423 23 12 24', 'phone:fr');
+		});
+
 		it("Iceland - format: +354 ###-####", function() {
-			$.is('1212525', 'phone:is').should.be.true;
-			$.is('121 2525', 'phone:is').should.be.true;
-			$.is('121 -2525', 'phone:is').should.be.true;
-			$.is('121- 2525', 'phone:is').should.be.true;
-			$.is('121 - 2525', 'phone:is').should.be.true;
-			$.is('121-2525', 'phone:is').should.be.true;
+			$.is('123-4567', 'phone:is').should.be.true;
+			$.is('+354 123-4567', 'phone:is').should.be.true;
+		});
+
+		it("United States of America - format: ###-###-####", function() {
+			$.is('123-456-7890', 'phone:us');
 		});
 	});
 
