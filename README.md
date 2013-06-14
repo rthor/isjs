@@ -12,11 +12,22 @@ Currently these *plugins* are stable:
 
 **cc (Credit cards)**
 
-Works for credit cards
+Works for:
+
+American Express
+
+Discover
+
+MasterCard
+
+Visa
+
+*or any*
 
 ```javascript
 // Example (vanilla JS)
-is('0000000000000000', 'cc'); // Returns true
+is('0000000000000000', 'cc:any'); // Returns true
+is('4000000000000000', 'cc:Visa'); // Returns true
 ```
 
 **datetime (Date and time)**
@@ -68,8 +79,9 @@ Iceland - format: ###-####
 
 ```javascript
 // Example (vanilla JS)
-is('000-0000', 'phone'); // Returns true
-is('0000000', 'phone'); // Returns true
+is('+354 000-0000', 'phone:is'); // Returns true
+is('000-0000', 'phone:is'); // Returns true
+is('0000000', 'phone:is'); // Returns true
 ```
 
 **zip:'two letter ISO 3166 country code' (Zip codes for countries)**
