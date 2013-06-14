@@ -59,12 +59,16 @@ describe("Regular expression keywords", function() {
 			$.is('0033423 23 12 24', 'phone:fr');
 		});
 
-		it("Iceland - format: +354 ###-####", function() {
+		it("Iceland", function() {
 			$.is('123-4567', 'phone:is').should.be.true;
 			$.is('+354 123-4567', 'phone:is').should.be.true;
 		});
 
-		it("United States of America - format: ###-###-####", function() {
+		it("United Kingdom", function() {
+			$.is('12345 123456', 'phone:uk');
+		});
+
+		it("United States of America", function() {
 			$.is('123-456-7890', 'phone:us');
 		});
 	});
