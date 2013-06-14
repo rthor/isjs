@@ -1,12 +1,14 @@
 # is.js
 
-Check your data against regular expressions or known keywords (see Keyword section). Diffrent versions for different platforms are availible.
+Check your data against regular expressions or known keywords (see Keyword section). Different versions for different platforms are availible.
 
 Currently these *plugins* are stable:
 
 - jQuery
 - Vanilla JavaScript (untested)
 - Node.js Module (untested)
+
+I wrote a really short blog post about the project a while ago, which can be read at [rthor.is/javascript/cross-plugin-javascript-project-isjs](http://rthor.is/javascript/cross-plugin-javascript-project-isjs/). *Note that some code examples are out of date*.
 
 ## Keywords
 
