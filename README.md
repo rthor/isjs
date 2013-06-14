@@ -137,6 +137,18 @@ The expression argument can be an actual regular expression.
 is('love', /.+/); // returns true
 ```
 
+## Change Log
+
+### 0.1.2 *JUNE 14, 2013*
+
+- `phone` has become an object so calling it requires a two letter ISO 3166 country code. For example validating Icelandic phone numbers in vanilla JS is now done thusly: `is('+354 000-0000', 'phone:is')`. In addition a few more countries were added.
+
+- `cc` - pretty much same thing happend as with the `phone` thing.
+
+### 0.1.1 *May 24, 2013*
+
+- First stable release
+
 ## Get in touch
 
 Follow me on twitter [@rthor](http://twitter.com/rthor) or send me a line in an [email](mailto:ragnar.valgeirsson@gmail.com).

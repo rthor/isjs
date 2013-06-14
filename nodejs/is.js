@@ -1,6 +1,6 @@
 /** 
  * is.js
- * Version: 0.1.1
+ * Version: 0.1.2
  * Created by: Ragnar Þór Valgeirsson (rthor)
  * URL: http://github.com/rthor/isjs
  * License: MIT
