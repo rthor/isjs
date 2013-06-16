@@ -77,7 +77,7 @@ is('-21.859328', 'latlng'); // Returns true
 
 **phone (Phone numbers)**
 
-Iceland - format: ###-####
+Iceland (is)
 
 ```javascript
 // Example (vanilla JS)
@@ -88,41 +88,41 @@ is('0000000', 'phone:is'); // Returns true
 
 **zip:'two letter ISO 3166 country code' (Zip codes for countries)**
 
-Australia - format: ####
+Australia (au)
 
-Austria - format: ####
+Austria (at)
 
-Belgium - format: ####
+Belgium (be)
 
-Brazil - format: #####-###
+Brazil (br)
 
-Canada - format: A#A #A#
+Canada (ca)
 
-Danmark - format: ### (or) ####
+Danmark (dk)
 
-Germany - format: #####
+Germany (de)
 
-Great Britain - format: AA#A #AA (or) A#A #AA (or) A# #AA (or) A## #AA (or) AA# #AA (or) AA## #AA
+Great Britain (gb)
 
-Hungry - format: ####
+Hungry (hu)
 
-Iceland - format: ###
+Iceland (is)
 
-Italy - format: #####
+Italy (it)
 
-Japan - format: ###-####
+Japan (jp)
 
-Luxembourg - format: L-####
+Luxembourg (lu)
 
-Nertherland - format: 1### AA
+Nertherland (nl)
 
-Polland - format: ##-###
+Polland (pl)
 
-Spain - format: [01-50]###
+Spain (es)
 
-Sweden - format: ### ##
+Sweden (se)
 
-United States of America - format: ##### (or) #####-####
+United States of America (us)
 
 ```javascript
 // Example (vanilla JS)
