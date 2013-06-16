@@ -77,7 +77,13 @@ is('-21.859328', 'latlng'); // Returns true
 
 **phone (Phone numbers)**
 
+France (fr)
+
 Iceland (is)
+
+United Kingdom (uk)
+
+United States of America (us)
 
 ```javascript
 // Example (vanilla JS)
