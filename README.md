@@ -1,3 +1,4 @@
+#spoon
 # is.js
 
 Check your data against regular expressions or known keywords (see Keyword section). Different versions for different platforms are availible.
