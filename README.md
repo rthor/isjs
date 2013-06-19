@@ -77,6 +77,8 @@ is('-21.859328', 'latlng'); // Returns true
 
 **phone (Phone numbers)**
 
+Australia (au)
+
 France (fr)
 
 Iceland (is)
