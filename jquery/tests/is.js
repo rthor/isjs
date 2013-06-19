@@ -178,4 +178,17 @@ describe("Regular expression keywords", function() {
 			$.is('12135-4342', 'zip:us').should.be.true;
 		});
 	});
+	describe("Passing a regex instead of a string", function() {
+		it("12-12 should match /\\d{2}-\\d{2}/", function() {
+			$.is('12-12', /\d{2}-\d{2}/).should.be.true;
+		});
+		it("1-1 should not match /\\d{2}-\\d{2}/", function() {
+			$.is('1-1', /\d{2}-\d{2}/).should.be.false;
+		});
+	});
+	describe("Function Tests", function() {
+		it("greater than 100", function() {
+			$.is(200, 'testing').should.be.true;
+		});
+	});
 });

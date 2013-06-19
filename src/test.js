@@ -6,5 +6,14 @@
 	* @return {boolean}
 	*/
 	function test( value, expression ) {
-		return expression.test( value.trim() );
+
+		if (expression instanceof RegExp) {
+			return expression.test( value.trim() );
+		};
+ 
+		if (expression instanceof Function) {
+			return expression(value);
+		};
+		
+		
 	}

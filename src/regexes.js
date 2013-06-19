@@ -1,6 +1,9 @@
 
 	// All regexes that can be tested against.
 	regex = {
+		testing: function(val){
+			return val > 100;
+		},
 		cc: {
 			'any': /^[0-9]{15,16}$/,
 			'AmericanExpress': /^34|37\d{13}$/,
