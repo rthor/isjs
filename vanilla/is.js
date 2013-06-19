@@ -10,6 +10,20 @@
 window.is = function ( value, expression ) {
 	if (typeof expression === undefined) return false;
 
+	// Declare and initiate variables
+	var deep = false;
+
+	// If expression is deep
+	if (
+		typeof expression === 'string' &&
+		expression.indexOf(':') !== -1
+	) {
+		// Set approriate variables
+		expression = expression.match( /(\w+)(?:\:)(\w+)/ );
+		deep = expression[2];
+		expression = expression[1];
+	}
+
 	// All regexes that can be tested against.
 	regex = {
 		cc: {
@@ -69,18 +83,6 @@ window.is = function ( value, expression ) {
 	function test( value, expression ) {
 		return expression.test( value.trim() );
 	}
-
-    var deep = false;
-
-    // If expression is deep
-    if (
-        typeof expression === 'string' &&
-        expression.indexOf(':') !== -1
-    ) {
-        expression = expression.match( /(\w+)(?:\:)(\w+)/ );
-        deep = expression[2];
-        expression = expression[1];
-    }
 
     if (regex.hasOwnProperty(expression)) {
         return test(value, deep ? regex[expression][deep] : regex[expression]);
