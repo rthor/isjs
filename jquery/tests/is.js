@@ -75,6 +75,12 @@ describe("Regular expression keywords", function() {
 	});
 
 	describe("Phone numbers", function() {
+		it("Australia", function() {
+			$.is('+61 8 4550 8955', 'phone:au');
+			$.is('061 8 4550 8955', 'phone:au');
+			$.is('8 4550 8955', 'phone:au');
+		});
+
 		it("France", function() {
 			$.is('0423 23 12 24', 'phone:fr');
 			$.is('+33423 23 12 24', 'phone:fr');
