@@ -1,6 +1,6 @@
 # is.js
 
-Check your data against regular expressions or known keywords (see Keyword section). Diffrent versions for different platforms are availible.
+Check your data against regular expressions or known keywords (see Keyword section). Different versions for different platforms are availible.
 
 Currently these *plugins* are stable:
 
@@ -8,15 +8,28 @@ Currently these *plugins* are stable:
 - Vanilla JavaScript (untested)
 - Node.js Module (untested)
 
+I wrote a really short blog post about the project a while ago, which can be read at [rthor.is/javascript/cross-plugin-javascript-project-isjs](http://rthor.is/javascript/cross-plugin-javascript-project-isjs/). *Note that some code examples are out of date*.
+
 ## Keywords
 
 **cc (Credit cards)**
 
-Works for credit cards
+Works for:
+
+American Express
+
+Discover
+
+MasterCard
+
+Visa
+
+*or any*
 
 ```javascript
 // Example (vanilla JS)
-is('0000000000000000', 'cc'); // Returns true
+is('0000000000000000', 'cc:any'); // Returns true
+is('4000000000000000', 'cc:Visa'); // Returns true
 ```
 
 **datetime (Date and time)**
@@ -64,51 +77,58 @@ is('-21.859328', 'latlng'); // Returns true
 
 **phone (Phone numbers)**
 
-Iceland - format: ###-####
+France (fr)
+
+Iceland (is)
+
+United Kingdom (uk)
+
+United States of America (us)
 
 ```javascript
 // Example (vanilla JS)
-is('000-0000', 'phone'); // Returns true
-is('0000000', 'phone'); // Returns true
+is('+354 000-0000', 'phone:is'); // Returns true
+is('000-0000', 'phone:is'); // Returns true
+is('0000000', 'phone:is'); // Returns true
 ```
 
 **zip:'two letter ISO 3166 country code' (Zip codes for countries)**
 
-Australia - format: ####
+Australia (au)
 
-Austria - format: ####
+Austria (at)
 
-Belgium - format: ####
+Belgium (be)
 
-Brazil - format: #####-###
+Brazil (br)
 
-Canada - format: A#A #A#
+Canada (ca)
 
-Danmark - format: ### (or) ####
+Danmark (dk)
 
-Germany - format: #####
+Germany (de)
 
-Great Britain - format: AA#A #AA (or) A#A #AA (or) A# #AA (or) A## #AA (or) AA# #AA (or) AA## #AA
+Great Britain (gb)
 
-Hungry - format: ####
+Hungry (hu)
 
-Iceland - format: ###
+Iceland (is)
 
-Italy - format: #####
+Italy (it)
 
-Japan - format: ###-####
+Japan (jp)
 
-Luxembourg - format: L-####
+Luxembourg (lu)
 
-Nertherland - format: 1### AA
+Nertherland (nl)
 
-Polland - format: ##-###
+Polland (pl)
 
-Spain - format: [01-50]###
+Spain (es)
 
-Sweden - format: ### ##
+Sweden (se)
 
-United States of America - format: ##### (or) #####-####
+United States of America (us)
 
 ```javascript
 // Example (vanilla JS)
@@ -124,6 +144,18 @@ The expression argument can be an actual regular expression.
 // Example (vanilla JS)
 is('love', /.+/); // returns true
 ```
+
+## Change Log
+
+### 0.1.2 *JUNE 14, 2013*
+
+- `phone` has become an object so calling it requires a two letter ISO 3166 country code. For example validating Icelandic phone numbers in vanilla JS is now done thusly: `is('+354 000-0000', 'phone:is')`. In addition a few more countries were added.
+
+- `cc` - pretty much same thing happend as with the `phone` thing.
+
+### 0.1.1 *May 24, 2013*
+
+- First stable release
 
 ## Get in touch
 

@@ -19,8 +19,30 @@ describe('Works when the value is as html', function() {
 describe("Regular expression keywords", function() {
 
 	describe("Credit cards", function() {
-		it("Works for credit cards", function() {
-			$.is('1234123412341234', 'cc').should.be.true;
+		it("Works for any credit card", function() {
+			$.is('123412341234123', 'cc:any').should.be.true;
+			$.is('1234123412341234', 'cc:any').should.be.true;
+		});
+
+		it("Works for American Express", function() {
+			$.is('3412312345654526', 'cc:AmericanExpress');
+			$.is('3712312345654526', 'cc:AmericanExpress');
+		});
+
+		it("Works for Discover", function() {
+			$.is('6011123456123456', 'cc:Discover');
+		});
+
+		it("Works for MasterCard", function() {
+			$.is('5112345671234567', 'cc:MasterCard');
+			$.is('5212345671234567', 'cc:MasterCard');
+			$.is('5312345671234567', 'cc:MasterCard');
+			$.is('5412345671234567', 'cc:MasterCard');
+			$.is('5512345671234567', 'cc:MasterCard');
+		});
+
+		it("Works for Visa", function() {
+			$.is('4000123412341234', 'cc:Visa');
 		});
 	});
 
@@ -53,13 +75,23 @@ describe("Regular expression keywords", function() {
 	});
 
 	describe("Phone numbers", function() {
-		it("Iceland - format: ###-####", function() {
-			$.is('1212525', 'phone').should.be.true;
-			$.is('121 2525', 'phone').should.be.true;
-			$.is('121 -2525', 'phone').should.be.true;
-			$.is('121- 2525', 'phone').should.be.true;
-			$.is('121 - 2525', 'phone').should.be.true;
-			$.is('121-2525', 'phone').should.be.true;
+		it("France", function() {
+			$.is('0423 23 12 24', 'phone:fr');
+			$.is('+33423 23 12 24', 'phone:fr');
+			$.is('0033423 23 12 24', 'phone:fr');
+		});
+
+		it("Iceland", function() {
+			$.is('123-4567', 'phone:is').should.be.true;
+			$.is('+354 123-4567', 'phone:is').should.be.true;
+		});
+
+		it("United Kingdom", function() {
+			$.is('12345 123456', 'phone:uk');
+		});
+
+		it("United States of America", function() {
+			$.is('123-456-7890', 'phone:us');
 		});
 	});
 
