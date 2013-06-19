@@ -1,10 +1,12 @@
 module.exports = function (grunt) {
 	var banner = '/** \n' +
-				' * is.js\n' +
-				' * Version: <%= pkg.version %>\n' +
-				' * Created by: <%= pkg.author.name %> (rthor)\n' +
-				' * URL: <%= pkg.homepage %>\n' +
-				' * License: <%= pkg.license %>\n' +
+				' * is.js - v<%= pkg.version %>\n' +
+				' * <%= pkg.description %>\n' +
+				' * <%= pkg.homepage %>\n' +
+				' *\n' +
+				' * Licensed under the MIT license.\n' +
+				' * Copyright (c) 2013 <%= pkg.author.name %>\n' +
+				' * <%= pkg.author.url %>\n' +
 				' */\n';
 
 	// Project configuration.

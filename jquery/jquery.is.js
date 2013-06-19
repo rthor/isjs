@@ -1,9 +1,11 @@
 /** 
- * is.js
- * Version: 0.1.3
- * Created by: Ragnar Þór Valgeirsson (rthor)
- * URL: http://github.com/rthor/isjs
- * License: MIT
+ * is.js - v0.1.3
+ * Check your data against regular expressions or known keywords.
+ * http://github.com/rthor/isjs
+ *
+ * Licensed under the MIT license.
+ * Copyright (c) 2013 Ragnar Þór Valgeirsson (rthor)
+ * http://rthor.is
  */
 (function($) {
 // What does the is plugin do?
