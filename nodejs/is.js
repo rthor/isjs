@@ -8,7 +8,11 @@
  * http://rthor.is
  */
 module.exports = function ( elem, expression ) {
-	var deep = false;
+
+	// Declare and initiate variables
+	var deep = false,
+		regex,
+		type;
 
 	// If expression is deep
 	if (
