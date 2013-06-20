@@ -89,12 +89,7 @@ $.is = $.fn.is = function() {
 		}
 	};
 
-	/**
-	* Tests a regular expression against a string
-	* @param  {string} value
-	* @param  {regexp} expression
-	* @return {boolean}
-	*/
+	// Tests a regular expression against a string
 	function test( value, expression ) {
 		return expression.test( value.trim() );
 	}

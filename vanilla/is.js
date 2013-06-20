@@ -66,20 +66,12 @@ window.is = function ( value, expression ) {
 		}
 	};
 
-	/**
-	 * Trims leading and trailing whitespace of a string
-	 * @return {string}
-	 */
+	// Trims leading and trailing whitespace of a string
 	function trim() {
 		return this.replace(/(?:(?:^|\n)\s+|\s+(?:$|\n))/g,'').replace(/\s+/g,' ');
 	}
 
-	/**
-	* Tests a regular expression against a string
-	* @param  {string} value
-	* @param  {regexp} expression
-	* @return {boolean}
-	*/
+	// Tests a regular expression against a string
 	function test( value, expression ) {
 		return expression.test( value.trim() );
 	}
