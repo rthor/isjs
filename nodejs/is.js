@@ -95,15 +95,11 @@ module.exports = function ( elem, expression ) {
 		return expression.test( value.trim() );
 	}
 
-    if (typeof expression === undefined) return false;
+	// Return boolean based on expression type
+ 	return isRegExp(expression) ?
+				test(value, expression) :
+			regex.hasOwnProperty(expression) ?
+				test(value, deep ? regex[expression][deep] : regex[expression]) :
+			false;
 
-    if (regex.hasOwnProperty(expression)) {
-        return test(elem, deep ? regex[expression][deep] : regex[expression]);
-    }
-
-    if ( isRegExp(expression) ) {
-        return test(elem, expression);
-    }
-
-    return false;
 };

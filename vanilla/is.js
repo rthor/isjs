@@ -96,13 +96,11 @@ window.is = function ( value, expression ) {
 		return expression.test( value.trim() );
 	}
 
-    if (regex.hasOwnProperty(expression)) {
-        return test(value, deep ? regex[expression][deep] : regex[expression]);
-    }
+	// Return boolean based on expression type
+ 	return isRegExp(expression) ?
+				test(value, expression) :
+			regex.hasOwnProperty(expression) ?
+				test(value, deep ? regex[expression][deep] : regex[expression]) :
+			false;
 
-    if ( isRegExp(expression) ) {
-        return test(value, expression);
-    }
-
-    return false;
 };

@@ -26,6 +26,7 @@ module.exports = function (grunt) {
 						'src/regexes.js',
 						'src/type.js',
 						'src/test.js',
+						'src/return.js',
 						'jquery/src/outro.js'
 					],
 					'vanilla/is.js': [
@@ -35,6 +36,7 @@ module.exports = function (grunt) {
 						'src/type.js',
 						'src/trim.js',
 						'src/test.js',
+						'src/return.js',
 						'vanilla/src/outro.js'
 					],
 					'nodejs/is.js': [
@@ -44,6 +46,7 @@ module.exports = function (grunt) {
 						'src/type.js',
 						'src/trim.js',
 						'src/test.js',
+						'src/return.js',
 						'nodejs/src/outro.js'
 					]
 				}

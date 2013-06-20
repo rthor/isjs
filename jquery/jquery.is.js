@@ -116,18 +116,13 @@ $.is = $.fn.is = function() {
 		return expression.test( value.trim() );
 	}
 
-	// If the expression is in the regex object
-	if (regex.hasOwnProperty(expression)) {
-		return test(value, deep ? regex[expression][deep] : regex[expression]);
-	}
+	// Return boolean based on expression type
+ 	return isRegExp(expression) ?
+				test(value, expression) :
+			regex.hasOwnProperty(expression) ?
+				test(value, deep ? regex[expression][deep] : regex[expression]) :
+			false;
 
-	// If the expression is a true regular expression
-	if ( isRegExp(expression) ) {
-		return test(value, expression);
-	}
-
-	// Return false if everything fails.
-	return false;
 };
 
 })(jQuery);
