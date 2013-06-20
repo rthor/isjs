@@ -19,9 +19,33 @@ module.exports = function (grunt) {
 			},
 			dist: {
 				files: {
-					'jquery/jquery.is.js': ['jquery/src/intro.js', 'jquery/src/nonroot.js', 'src/deep.js', 'src/regexes.js', 'src/test.js', 'jquery/src/outro.js'],
-					'vanilla/is.js': ['vanilla/src/intro.js', 'src/deep.js', 'src/regexes.js', 'src/trim.js', 'src/test.js', 'vanilla/src/outro.js'],
-					'nodejs/is.js': ['nodejs/src/intro.js', 'src/deep.js', 'src/regexes.js', 'src/trim.js', 'src/test.js', 'nodejs/src/outro.js']
+					'jquery/jquery.is.js': [
+						'jquery/src/intro.js',
+						'jquery/src/nonroot.js',
+						'src/deep.js',
+						'src/regexes.js',
+						'src/type.js',
+						'src/test.js',
+						'jquery/src/outro.js'
+					],
+					'vanilla/is.js': [
+						'vanilla/src/intro.js',
+						'src/deep.js',
+						'src/regexes.js',
+						'src/type.js',
+						'src/trim.js',
+						'src/test.js',
+						'vanilla/src/outro.js'
+					],
+					'nodejs/is.js': [
+						'nodejs/src/intro.js',
+						'src/deep.js',
+						'src/regexes.js',
+						'src/type.js',
+						'src/trim.js',
+						'src/test.js',
+						'nodejs/src/outro.js'
+					]
 				}
 			}
 		},
