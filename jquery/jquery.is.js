@@ -107,6 +107,10 @@ $.is = $.fn.is = function() {
 		string: '[object String]'
 	};
 
+	function isRegExp( val ) {
+		return val ? (typeof val === 'object' && toString.call(val) === type.regexp) : false;
+	}
+
 	// Tests a regular expression against a string
 	function test( value, expression ) {
 		return expression.test( value.trim() );
@@ -118,7 +122,7 @@ $.is = $.fn.is = function() {
 	}
 
 	// If the expression is a true regular expression
-	if (typeof expression === 'object') {
+	if ( isRegExp(expression) ) {
 		return test(value, expression);
 	}
 

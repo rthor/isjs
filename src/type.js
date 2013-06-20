@@ -12,3 +12,7 @@
 		regexp: '[object RegExp]',
 		string: '[object String]'
 	};
+
+	function isRegExp( val ) {
+		return val ? (typeof val === 'object' && toString.call(val) === type.regexp) : false;
+	}

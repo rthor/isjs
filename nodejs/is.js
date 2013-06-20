@@ -81,6 +81,10 @@ module.exports = function ( elem, expression ) {
 		string: '[object String]'
 	};
 
+	function isRegExp( val ) {
+		return val ? (typeof val === 'object' && toString.call(val) === type.regexp) : false;
+	}
+
 	// Trims leading and trailing whitespace of a string
 	function trim() {
 		return this.replace(/(?:(?:^|\n)\s+|\s+(?:$|\n))/g,'').replace(/\s+/g,' ');
@@ -97,7 +101,7 @@ module.exports = function ( elem, expression ) {
         return test(elem, deep ? regex[expression][deep] : regex[expression]);
     }
 
-    if (typeof expression === 'object') {
+    if ( isRegExp(expression) ) {
         return test(elem, expression);
     }
 

@@ -5,7 +5,7 @@
         return test(elem, deep ? regex[expression][deep] : regex[expression]);
     }
 
-    if (typeof expression === 'object') {
+    if ( isRegExp(expression) ) {
         return test(elem, expression);
     }
 

@@ -5,7 +5,7 @@
 	}
 
 	// If the expression is a true regular expression
-	if (typeof expression === 'object') {
+	if ( isRegExp(expression) ) {
 		return test(value, expression);
 	}
 

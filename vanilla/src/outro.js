@@ -3,7 +3,7 @@
         return test(value, deep ? regex[expression][deep] : regex[expression]);
     }
 
-    if (typeof expression === 'object') {
+    if ( isRegExp(expression) ) {
         return test(value, expression);
     }
 
