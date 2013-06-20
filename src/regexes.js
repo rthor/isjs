@@ -1,8 +1,19 @@
 
 	// All regexes that can be tested against.
 	regex = {
-		testing: function(val){
-			return val > 100;
+		luhn: function(number) {
+			var numDigits = number.toString().length;
+
+                var sum = 0, i = numDigits - 1, pos = 1, digit, luhn = new String();
+                do {
+                    digit = parseInt(number.toString().charAt(i));
+                    luhn += (pos++ % 2 == 0) ? digit * 2 : digit;
+                } while (--i >= 0)
+
+                for (i = 0; i < luhn.length; i++) {
+                    sum += parseInt(luhn.charAt(i));
+                }
+                return sum % 10 == 0;
 		},
 		cc: {
 			'any': /^[0-9]{15,16}$/,

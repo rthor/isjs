@@ -192,9 +192,14 @@ describe("Regular expression keywords", function() {
 			$.is('1-1', /\d{2}-\d{2}/).should.be.false;
 		});
 	});
-	describe("Function Tests", function() {
-		it("greater than 100", function() {
-			$.is(200, 'testing').should.be.true;
+	describe("Luhn Tests", function() {
+		it("luhn as a number", function() {
+			$.is(200, 'luhn').should.be.false;
+			$.is(4111111111111111, 'luhn').should.be.true;
+		});
+		it("luhn as a string", function() {
+			$.is('200', 'luhn').should.be.false;
+			$.is('4111111111111111', 'luhn').should.be.true;
 		});
 	});
 });
