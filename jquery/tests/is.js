@@ -184,4 +184,22 @@ describe("Regular expression keywords", function() {
 			$.is('12135-4342', 'zip:us').should.be.true;
 		});
 	});
+	describe("Passing a regex instead of a string", function() {
+		it("12-12 should match /\\d{2}-\\d{2}/", function() {
+			$.is('12-12', /\d{2}-\d{2}/).should.be.true;
+		});
+		it("1-1 should not match /\\d{2}-\\d{2}/", function() {
+			$.is('1-1', /\d{2}-\d{2}/).should.be.false;
+		});
+	});
+	describe("Luhn Tests", function() {
+		it("luhn as a number", function() {
+			$.is(200, 'luhn').should.be.false;
+			$.is(4111111111111111, 'luhn').should.be.true;
+		});
+		it("luhn as a string", function() {
+			$.is('200', 'luhn').should.be.false;
+			$.is('4111111111111111', 'luhn').should.be.true;
+		});
+	});
 });
