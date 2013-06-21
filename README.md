@@ -77,6 +77,8 @@ is('-21.859328', 'latlng'); // Returns true
 
 **phone (Phone numbers)**
 
+Argentina (ar)
+
 Australia (au)
 
 France (fr)
@@ -95,6 +97,8 @@ is('0000000', 'phone:is'); // Returns true
 ```
 
 **zip:'two letter ISO 3166 country code' (Zip codes for countries)**
+
+Argentina (ar)
 
 Australia (au)
 
