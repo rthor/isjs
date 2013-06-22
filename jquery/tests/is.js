@@ -75,6 +75,12 @@ describe("Regular expression keywords", function() {
 	});
 
 	describe("Phone numbers", function() {
+		it("Argentina", function() {
+			$.is('+54 2345-6789', 'phone:ar');
+			$.is('2345-6789', 'phone:ar');
+			$.is('23456789', 'phone:ar');
+		});
+
 		it("Australia", function() {
 			$.is('+61 8 4550 8955', 'phone:au');
 			$.is('061 8 4550 8955', 'phone:au');
@@ -102,6 +108,10 @@ describe("Regular expression keywords", function() {
 	});
 
 	describe("Zip codes for countries", function() {
+		it("Argentina - format: ####", function() {
+			$.is('1122', 'zip:ar').should.be.true;
+		});
+
 		it("Australia - format: ####", function() {
 			$.is('1122', 'zip:au').should.be.true;
 		});
