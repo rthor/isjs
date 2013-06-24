@@ -159,6 +159,10 @@ describe("Regular expression keywords", function() {
 			$.is('112', 'zip:is').should.be.true;
 		});
 
+		it("Indonesia - format: #####", function() {
+			$.is('12345', 'zip:id').should.be.true;
+		});
+
 		it("Italy - format: #####", function() {
 			$.is('12345', 'zip:it').should.be.true;
 		});
