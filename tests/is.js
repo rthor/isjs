@@ -108,90 +108,90 @@ describe("Regular expression keywords", function() {
 	});
 
 	describe("Zip codes for countries", function() {
-		it("Argentina - format: ####", function() {
-			$.is('1122', 'zip:ar').should.be.true;
+		it("Argentina", function() {
+			regex.zip['ar'].test('1122').should.be.true;
 		});
 
-		it("Australia - format: ####", function() {
-			$.is('1122', 'zip:au').should.be.true;
+		it("Australia", function() {
+			regex.zip['au'].test('1122').should.be.true;
 		});
 
-		it("Austria - format: ####", function() {
-			$.is('1122', 'zip:at').should.be.true;
+		it("Austria", function() {
+			regex.zip['at'].test('1122').should.be.true;
 		});
 
-		it("Belgium - format: ####", function() {
-			$.is('1122', 'zip:be').should.be.true;
+		it("Belgium", function() {
+			regex.zip['be'].test('1122').should.be.true;
 		});
 
-		it("Brazil - format: #####-###", function() {
-			$.is('25251-121', 'zip:br').should.be.true;
+		it("Brazil", function() {
+			regex.zip['br'].test('25251-121').should.be.true;
 		});
 
-		it("Canada - format: A#A #A#", function() {
-			$.is('K2A 7B7', 'zip:ca').should.be.true;
+		it("Canada", function() {
+			regex.zip['ca'].test('K2A 7B7').should.be.true;
 		});
 
-		it("Danmark - format: ### (or) ####", function() {
-			$.is('123', 'zip:dk').should.be.true;
-			$.is('1234', 'zip:dk').should.be.true;
+		it("Danmark", function() {
+			regex.zip['dk'].test('123').should.be.true;
+			regex.zip['dk'].test('1234').should.be.true;
 		});
 
-		it("Germany - format: #####", function() {
-			$.is('12345', 'zip:de').should.be.true;
+		it("Germany", function() {
+			regex.zip['de'].test('12345').should.be.true;
 		});
 
-		it("Great Britain - format: AA#A #AA (or) A#A #AA (or) A# #AA (or) A## #AA (or) AA# #AA (or) AA## #AA", function() {
-			$.is('gj5g 5hh', 'zip:gb').should.be.true;
-			$.is('h7u 5hh', 'zip:gb').should.be.true;
-			$.is('h7 5hh', 'zip:gb').should.be.true;
-			$.is('h76 5hh', 'zip:gb').should.be.true;
-			$.is('hf6 5hh', 'zip:gb').should.be.true;
-			$.is('hf63 5hh', 'zip:gb').should.be.true;
+		it("Great Britain", function() {
+			regex.zip['gb'].test('gj5g 5hh').should.be.true;
+			regex.zip['gb'].test('h7u 5hh').should.be.true;
+			regex.zip['gb'].test('h7 5hh').should.be.true;
+			regex.zip['gb'].test('h76 5hh').should.be.true;
+			regex.zip['gb'].test('hf6 5hh').should.be.true;
+			regex.zip['gb'].test('hf63 5hh').should.be.true;
 		});
 
 
-		it("Hungry - format: ####", function() {
-			$.is('1234', 'zip:hu').should.be.true;
+		it("Hungry", function() {
+			regex.zip['hu'].test('1234').should.be.true;
 		});
 
-		it("Iceland - format: ###", function() {
-			$.is('112', 'zip:is').should.be.true;
+		it("Iceland", function() {
+			regex.zip['is'].test('112').should.be.true;
 		});
 
-		it("Italy - format: #####", function() {
-			$.is('12345', 'zip:it').should.be.true;
+		it("Italy", function() {
+			regex.zip['it'].test('12345').should.be.true;
 		});
 
-		it("Japan - format: ###-####", function() {
-			$.is('123-1234', 'zip:jp').should.be.true;
+		it("Japan", function() {
+			regex.zip['jp'].test('123-1234').should.be.true;
 		});
 
-		it("Luxembourg - format: L-####", function() {
-			$.is('L-1234', 'zip:lu').should.be.true;
+		it("Luxembourg", function() {
+			regex.zip['lu'].test('L-1234').should.be.true;
 		});
 
-		it("Nertherland - format: 1### AA", function() {
-			$.is('1234 aG', 'zip:nl').should.be.true;
-			$.is('1234AA', 'zip:nl').should.be.true;
+		it("Nertherland", function() {
+			regex.zip['nl'].test('1234 aG').should.be.true;
+			regex.zip['nl'].test('1234AA').should.be.true;
 		});
 
-		it("Polland - format: ##-###", function() {
-			$.is('12-123', 'zip:pl').should.be.true;
+		it("Polland", function() {
+			regex.zip['pl'].test('12-123').should.be.true;
 		});
 
-		it("Spain - format: [01-50]###", function() {
-			$.is('01123', 'zip:es').should.be.true;
-			$.is('50123', 'zip:es').should.be.true;
+		it("Spain", function() {
+			regex.zip['es'].test('01123').should.be.true;
+			regex.zip['es'].test('50123').should.be.true;
 		});
 
-		it("Sweden - format: ### ##", function() {
-			$.is('12312', 'zip:se').should.be.true;
-			$.is('123 12', 'zip:se').should.be.true;
+		it("Sweden", function() {
+			regex.zip['se'].test('12312').should.be.true;
+			regex.zip['se'].test('123 12').should.be.true;
 		});
-		it("United States of America - format: ##### (or) #####-####", function() {
-			$.is('12135', 'zip:us').should.be.true;
-			$.is('12135-4342', 'zip:us').should.be.true;
+		it("United States of America", function() {
+			regex.zip['us'].test('12135').should.be.true;
+			regex.zip['us'].test('12135-4342').should.be.true;
 		});
 	});
 });
