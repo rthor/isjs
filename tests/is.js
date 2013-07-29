@@ -1,6 +1,6 @@
 chai.should();
 
-describe('Works when the value is as html', function() {
+describe('jQuery Plugin', function() {
 	it("should work on paragraph elements", function() {
 		var p = $('</p>').text('john.doe@company.com');
 		p.is('email').should.be.true;
@@ -20,90 +20,90 @@ describe("Regular expression keywords", function() {
 
 	describe("Credit cards", function() {
 		it("Works for any credit card", function() {
-			$.is('123412341234123', 'cc:any').should.be.true;
-			$.is('1234123412341234', 'cc:any').should.be.true;
+			regex.cc['any'].test('123412341234123', 'cc:any').should.be.true;
+			regex.cc['any'].test('1234123412341234', 'cc:any').should.be.true;
 		});
 
 		it("Works for American Express", function() {
-			$.is('3412312345654526', 'cc:AmericanExpress');
-			$.is('3712312345654526', 'cc:AmericanExpress');
+			regex.cc['AmericanExpress'].test('3412312345654526').should.be.true;
+			regex.cc['AmericanExpress'].test('3712312345654526').should.be.true;
 		});
 
 		it("Works for Discover", function() {
-			$.is('6011123456123456', 'cc:Discover');
+			regex.cc['Discover'].test('6011123456123456').should.be.true;
 		});
 
 		it("Works for MasterCard", function() {
-			$.is('5112345671234567', 'cc:MasterCard');
-			$.is('5212345671234567', 'cc:MasterCard');
-			$.is('5312345671234567', 'cc:MasterCard');
-			$.is('5412345671234567', 'cc:MasterCard');
-			$.is('5512345671234567', 'cc:MasterCard');
+			regex.cc['MasterCard'].test('5112345671234567').should.be.true;
+			regex.cc['MasterCard'].test('5212345671234567').should.be.true;
+			regex.cc['MasterCard'].test('5312345671234567').should.be.true;
+			regex.cc['MasterCard'].test('5412345671234567').should.be.true;
+			regex.cc['MasterCard'].test('5512345671234567').should.be.true;
 		});
 
 		it("Works for Visa", function() {
-			$.is('4000123412341234', 'cc:Visa');
+			regex.cc['Visa'].test('4000123412341234').should.be.true;
 		});
 	});
 
 	describe("Date and time", function() {
 		it("Format: 1996-12-19T16:39:57-08:00", function() {
-			$.is('1996-12-19T16:39:57-08:00', 'datetime').should.be.true;
+			regex.datetime.test('1996-12-19T16:39:57-08:00').should.be.true;
 		});
 	});
 
 	describe("ISBN", function() {
 		it("ISBN 10", function() {
-			$.is('0-85131-041-9', 'isbn').should.be.true;
-			$.is('0851310419', 'isbn').should.be.true;
+			regex.isbn.test('0-85131-041-9').should.be.true;
+			regex.isbn.test('0851310419').should.be.true;
 		});
 
 		it("ISBN 13", function() {
-			$.is('978-1-56619-909-4', 'isbn').should.be.true;
-			$.is('9781566199094', 'isbn').should.be.true;
+			regex.isbn.test('978-1-56619-909-4').should.be.true;
+			regex.isbn.test('9781566199094').should.be.true;
 		});
 	});
 
 	describe("Latitude and longitude", function() {
 		it("Latitude", function() {
-			$.is('64.163296', 'latlng');
+			regex.latlng.test('64.163296').should.be.true;
 		});
 
 		it("Longitude", function() {
-			$.is('-21.859328', 'latlng');
+			regex.latlng.test('-21.859328').should.be.true;
 		});
 	});
 
 	describe("Phone numbers", function() {
 		it("Argentina", function() {
-			$.is('+54 2345-6789', 'phone:ar');
-			$.is('2345-6789', 'phone:ar');
-			$.is('23456789', 'phone:ar');
+			regex.phone['ar'].test('+54 2345-6789').should.be.true;
+			regex.phone['ar'].test('2345-6789').should.be.true;
+			regex.phone['ar'].test('23456789').should.be.true;
 		});
 
 		it("Australia", function() {
-			$.is('+61 8 4550 8955', 'phone:au');
-			$.is('061 8 4550 8955', 'phone:au');
-			$.is('8 4550 8955', 'phone:au');
+			regex.phone['au'].test('+61 8 4550 8955').should.be.true;
+			regex.phone['au'].test('061 8 4550 8955').should.be.true;
+			regex.phone['au'].test('8 4550 8955').should.be.true;
 		});
 
 		it("France", function() {
-			$.is('0423 23 12 24', 'phone:fr');
-			$.is('+33423 23 12 24', 'phone:fr');
-			$.is('0033423 23 12 24', 'phone:fr');
+			regex.phone['fr'].test('0423 23 12 24').should.be.true;
+			regex.phone['fr'].test('+33423 23 12 24').should.be.true;
+			regex.phone['fr'].test('0033423 23 12 24').should.be.true;
 		});
 
 		it("Iceland", function() {
-			$.is('123-4567', 'phone:is').should.be.true;
-			$.is('+354 123-4567', 'phone:is').should.be.true;
+			regex.phone['is'].test('123-4567').should.be.true;
+			regex.phone['is'].test('+354 123-4567').should.be.true;
 		});
 
 		it("United Kingdom", function() {
-			$.is('12345 123456', 'phone:uk');
+			regex.phone['uk'].test('12345 123456').should.be.true;
 		});
 
 		it("United States of America", function() {
-			$.is('123-456-7890', 'phone:us');
+			regex.phone['us'].test('123-456-7890').should.be.true;
 		});
 	});
 
