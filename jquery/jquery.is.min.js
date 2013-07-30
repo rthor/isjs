@@ -1,5 +1,5 @@
 /** 
- * is.js - v0.1.3
+ * is.js - v0.2.0
  * Check your data against regular expressions or known keywords.
  * http://github.com/rthor/isjs
  *

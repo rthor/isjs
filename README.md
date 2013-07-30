@@ -153,6 +153,14 @@ is('love', /.+/); // returns true
 
 ## Change Log
 
+### 0.2.0 *JULY 30, 2013*
+
+- All regular expressions are unit tested.
+
+- Added functionality to validate via functions. The second argument can now either be a regular function accepting a single argument or a string pointing to a function within the `regex.fn` object.
+
+- Current functions include: even, odd, regexp, ok and function.
+
 ### 0.1.2 *JUNE 14, 2013*
 
 - `phone` has become an object so calling it requires a two letter ISO 3166 country code. For example validating Icelandic phone numbers in vanilla JS is now done thusly: `is('+354 000-0000', 'phone:is')`. In addition a few more countries were added.
