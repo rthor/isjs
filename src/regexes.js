@@ -42,3 +42,27 @@
 			'us': /^(\d{5}([\-]\d{4})?)$/
 		}
 	};
+
+	// Function object
+	regex.fn = {
+		even: function ( num ) {
+			if ( isNaN( num ) ) num = num.parseInt( num, 10 );
+			return isNaN( num ) ? false : num === 0 || ( num % 2 ) === 0;
+		},
+		function: function ( val ) {
+			return typeof val === 'function';
+		},
+		odd: function ( num ) {
+			return !this.even( num );
+		},
+		ok: function ( val, expression ) {
+			if ( typeof val === 'string' ) {
+				return expression.test( val.trim() );
+			} else {
+				return !!val;
+			}
+		},
+		regexp: function ( val ) {
+			return val ? (typeof val === 'object' && toString.call(val) === '[object RegExp]') : false;
+		}
+	};

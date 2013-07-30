@@ -17,7 +17,6 @@ $.is = $.fn.is = function() {
 	var deep = false,
 		expression,
 		regex,
-		type,
 		value;
 
 	// If plugin is run on the root jQuery object
@@ -95,34 +94,39 @@ $.is = $.fn.is = function() {
 		}
 	};
 
-	// Object to String result shortcuts
-	type = {
-		args: '[object Arguments]',
-		array: '[object Array]',
-		bool: '[object Boolean]',
-		date: '[object Date]',
-		error: '[object Error]',
-		func: '[object Function]',
-		number: '[object Number]',
-		object: '[object Object]',
-		regexp: '[object RegExp]',
-		string: '[object String]'
+	// Function object
+	regex.fn = {
+		even: function ( num ) {
+			if ( isNaN( num ) ) num = num.parseInt( num, 10 );
+			return isNaN( num ) ? false : num === 0 || ( num % 2 ) === 0;
+		},
+		function: function ( val ) {
+			return typeof val === 'function';
+		},
+		odd: function ( num ) {
+			return !this.even( num );
+		},
+		ok: function ( val, expression ) {
+			if ( typeof val === 'string' ) {
+				return expression.test( val.trim() );
+			} else {
+				return !!val;
+			}
+		},
+		regexp: function ( val ) {
+			return val ? (typeof val === 'object' && toString.call(val) === '[object RegExp]') : false;
+		}
 	};
 
-	function isRegExp( val ) {
-		return val ? (typeof val === 'object' && toString.call(val) === type.regexp) : false;
-	}
-
-	// Tests a regular expression against a string
-	function test( value, expression ) {
-		return expression.test( value.trim() );
-	}
-
 	// Return boolean based on expression type
- 	return isRegExp(expression) ?
-				test(value, expression) :
+ 	return regex.fn.regexp(expression) ?
+				regex.fn.ok(value, expression) :
 			regex.hasOwnProperty(expression) ?
-				test(value, deep ? regex[expression][deep] : regex[expression]) :
+				regex.fn.ok(value, deep ? regex[expression][deep] : regex[expression]) :
+			regex.fn.hasOwnProperty( expression ) ?
+				( regex.fn[ expression ]( value ) ? true : false ) :
+			regex.fn.function( expression ) ?
+				( expression( value ) ? true : false ) :
 			false;
 
 };

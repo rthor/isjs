@@ -8,7 +8,6 @@ $.is = $.fn.is = function() {
 	var deep = false,
 		expression,
 		regex,
-		type,
 		value;
 
 	// If plugin is run on the root jQuery object

@@ -1,18 +1,55 @@
 chai.should();
 
 describe('jQuery Plugin', function() {
-	it("should work on paragraph elements", function() {
-		var p = $('</p>').text('john.doe@company.com');
-		p.is('email').should.be.true;
+	describe('Applicability', function() {
+		it("Works on paragraph elements", function() {
+			var p = $('</p>').text('john.doe@company.com');
+			p.is('email').should.be.true;
+		});
+
+		it('Works on input elements', function() {
+			var input = $('<input>').val('john.doe@company.com');
+			input.is('email').should.be.true;
+		});
+
+		it("Works on strings", function() {
+			$.is('john.doe@company.com', 'email').should.be.true;
+		});
 	});
 
-	it('should work on input elements', function() {
-		var input = $('<input>').val('john.doe@company.com');
-		input.is('email').should.be.true;
+	describe('Functions', function() {
+		it('Accepts function validation', function() {
+			function even ( num ) { return (num % 2) === 0; }
+			$.is(232, even).should.be.true;
+		});
+
+		it('Has predefined functions', function() {
+			$.is(/\w.+/g, 'regexp').should.be.true;
+		});
+	});
+});
+
+describe('Functions', function() {
+	it('Validates boolean values', function() {
+		regex.fn.ok( true ).should.be.true;
 	});
 
-	it("should work on strings", function() {
-		$.is('john.doe@company.com', 'email').should.be.true;
+	it('Tests if a value is a regular expression', function() {
+		regex.fn.regexp( /love?/ ).should.be.true;
+	});
+
+	it('Tests if a value is a regfunctionular expression', function() {
+		regex.fn.function(function () {
+			return 'I am a function - Deal with it!';
+		}).should.be.true;
+	});
+
+	it('Test whither numbers are even', function() {
+		regex.fn.even( 234 ).should.be.true;
+	});
+
+	it('Test whither numbers are odd', function() {
+		regex.fn.odd( 533 ).should.be.true;
 	});
 });
 

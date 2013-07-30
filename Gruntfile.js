@@ -24,8 +24,6 @@ module.exports = function (grunt) {
 						'jquery/src/nonroot.js',
 						'src/deep.js',
 						'src/regexes.js',
-						'src/type.js',
-						'src/test.js',
 						'src/return.js',
 						'jquery/src/outro.js'
 					],
@@ -33,9 +31,7 @@ module.exports = function (grunt) {
 						'vanilla/src/intro.js',
 						'src/deep.js',
 						'src/regexes.js',
-						'src/type.js',
 						'src/trim.js',
-						'src/test.js',
 						'src/return.js',
 						'vanilla/src/outro.js'
 					],
@@ -43,9 +39,7 @@ module.exports = function (grunt) {
 						'nodejs/src/intro.js',
 						'src/deep.js',
 						'src/regexes.js',
-						'src/type.js',
 						'src/trim.js',
-						'src/test.js',
 						'src/return.js',
 						'nodejs/src/outro.js'
 					]
