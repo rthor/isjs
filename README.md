@@ -142,7 +142,16 @@ is('112', 'zip:is'); // Returns true
 is('32044', 'zip:us'); // Returns true
 ```
 
-## One more thing.
+## Additional Goodies
+
+The second parameter can point to a function within the `check.fn` object. It can also be a regular user defined function accepting a single argument which can be used for some complex (or simple) validation.
+
+```javascript
+// Example (vanilla JS)
+is(42, function ( num ) {
+	return num === 20; // returns false
+});
+```
 
 The expression argument can be an actual regular expression.
 
