@@ -2,4 +2,4 @@ module.exports = function ( value, expression ) {
 
 	// Declare and initiate variables
 	var deep = false,
-		regex;
+		check;

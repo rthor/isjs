@@ -16,7 +16,7 @@ $.is = $.fn.is = function() {
 	// Declare variables
 	var deep = false,
 		expression,
-		regex,
+		check,
 		value;
 
 	// If plugin is run on the root jQuery object
@@ -51,7 +51,7 @@ $.is = $.fn.is = function() {
 	}
 
 	// All regexes that can be tested against.
-	regex = {
+	check = {
 		cc: {
 			'any': /^[0-9]{15,16}$/,
 			'AmericanExpress': /^(34)|(37)\d{14}$/,
@@ -95,7 +95,7 @@ $.is = $.fn.is = function() {
 	};
 
 	// Function object
-	regex.fn = {
+	check.fn = {
 		even: function ( num ) {
 			if ( isNaN( num ) ) num = num.parseInt( num, 10 );
 			return isNaN( num ) ? false : num === 0 || ( num % 2 ) === 0;
@@ -119,13 +119,13 @@ $.is = $.fn.is = function() {
 	};
 
 	// Return boolean based on expression type
- 	return regex.fn.regexp(expression) ?
-				regex.fn.ok(value, expression) :
-			regex.hasOwnProperty(expression) ?
-				regex.fn.ok(value, deep ? regex[expression][deep] : regex[expression]) :
-			regex.fn.hasOwnProperty( expression ) ?
-				( regex.fn[ expression ]( value ) ? true : false ) :
-			regex.fn.function( expression ) ?
+ 	return check.fn.regexp(expression) ?
+				check.fn.ok(value, expression) :
+			check.hasOwnProperty(expression) ?
+				check.fn.ok(value, deep ? check[expression][deep] : check[expression]) :
+			check.fn.hasOwnProperty( expression ) ?
+				( check.fn[ expression ]( value ) ? true : false ) :
+			check.fn.function( expression ) ?
 				( expression( value ) ? true : false ) :
 			false;
 

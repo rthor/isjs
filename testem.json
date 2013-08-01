@@ -2,7 +2,7 @@
     "framework": "mocha+chai",
     "src_files": [
     	"tests/jquery.js",
-    	"src/regexes.js",
+    	"src/check.js",
     	"jquery/jquery.is.js",
     	"tests/is.js"
     ]

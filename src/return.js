@@ -1,11 +1,11 @@
 
 	// Return boolean based on expression type
- 	return regex.fn.regexp(expression) ?
-				regex.fn.ok(value, expression) :
-			regex.hasOwnProperty(expression) ?
-				regex.fn.ok(value, deep ? regex[expression][deep] : regex[expression]) :
-			regex.fn.hasOwnProperty( expression ) ?
-				( regex.fn[ expression ]( value ) ? true : false ) :
-			regex.fn.function( expression ) ?
+ 	return check.fn.regexp(expression) ?
+				check.fn.ok(value, expression) :
+			check.hasOwnProperty(expression) ?
+				check.fn.ok(value, deep ? check[expression][deep] : check[expression]) :
+			check.fn.hasOwnProperty( expression ) ?
+				( check.fn[ expression ]( value ) ? true : false ) :
+			check.fn.function( expression ) ?
 				( expression( value ) ? true : false ) :
 			false;

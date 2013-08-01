@@ -7,7 +7,7 @@ $.is = $.fn.is = function() {
 	// Declare variables
 	var deep = false,
 		expression,
-		regex,
+		check,
 		value;
 
 	// If plugin is run on the root jQuery object

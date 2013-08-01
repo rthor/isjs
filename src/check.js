@@ -1,6 +1,6 @@
 
 	// All regexes that can be tested against.
-	regex = {
+	check = {
 		cc: {
 			'any': /^[0-9]{15,16}$/,
 			'AmericanExpress': /^(34)|(37)\d{14}$/,
@@ -44,7 +44,7 @@
 	};
 
 	// Function object
-	regex.fn = {
+	check.fn = {
 		even: function ( num ) {
 			if ( isNaN( num ) ) num = num.parseInt( num, 10 );
 			return isNaN( num ) ? false : num === 0 || ( num % 2 ) === 0;

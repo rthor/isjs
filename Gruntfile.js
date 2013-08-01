@@ -23,14 +23,14 @@ module.exports = function (grunt) {
 						'jquery/src/intro.js',
 						'jquery/src/nonroot.js',
 						'src/deep.js',
-						'src/regexes.js',
+						'src/check.js',
 						'src/return.js',
 						'jquery/src/outro.js'
 					],
 					'vanilla/is.js': [
 						'vanilla/src/intro.js',
 						'src/deep.js',
-						'src/regexes.js',
+						'src/check.js',
 						'src/trim.js',
 						'src/return.js',
 						'vanilla/src/outro.js'
@@ -38,7 +38,7 @@ module.exports = function (grunt) {
 					'nodejs/is.js': [
 						'nodejs/src/intro.js',
 						'src/deep.js',
-						'src/regexes.js',
+						'src/check.js',
 						'src/trim.js',
 						'src/return.js',
 						'nodejs/src/outro.js'
