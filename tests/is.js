@@ -34,21 +34,21 @@ describe('Functions', function() {
 		check.fn.ok( true ).should.be.true;
 	});
 
-	it('Tests if a value is a regular expression', function() {
+	it('regexp', function() {
 		check.fn.regexp( /love?/ ).should.be.true;
 	});
 
-	it('Tests if a value is a regfunctionular expression', function() {
+	it('function', function() {
 		check.fn.function(function () {
 			return 'I am a function - Deal with it!';
 		}).should.be.true;
 	});
 
-	it('Test whither numbers are even', function() {
+	it('even', function() {
 		check.fn.even( 234 ).should.be.true;
 	});
 
-	it('Test whither numbers are odd', function() {
+	it('odd', function() {
 		check.fn.odd( 533 ).should.be.true;
 	});
 });
