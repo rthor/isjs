@@ -51,6 +51,10 @@ describe('Functions', function() {
 	it('odd', function() {
 		check.fn.odd( 533 ).should.be.true;
 	});
+
+	it('luhn', function() {
+		check.fn.luhn( 1234567812345670 ).should.be.true;
+	});
 });
 
 describe("Regular expression keywords", function() {

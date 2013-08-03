@@ -78,6 +78,25 @@ window.is = function ( value, expression ) {
 		function: function ( val ) {
 			return typeof val === 'function';
 		},
+		luhn: function ( num ) {
+			// Stringify the num
+			// Create an array and reverse it
+			num = (num + '').split('').reverse();
+
+			// Define variables for later use
+			var sum = 0, i, digit;
+
+			for( i = 0; i < num.length; i++) {
+				// Assign number to digit and multiply by 2 every odd num
+				digit = parseInt(num[ i ], 10) * ((i + 1) % 2 ? 1 : 2);
+
+				// Add to the sum but reduce by 9 if digit > 9
+				sum += digit > 9 ? digit - 9 : digit;
+			}
+
+			// Return boolean
+			return (sum % 10) === 0;
+		},
 		odd: function ( num ) {
 			return !this.even( num );
 		},
