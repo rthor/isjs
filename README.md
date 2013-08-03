@@ -5,8 +5,8 @@ Check your data against regular expressions or known keywords (see Keyword secti
 Currently these *plugins* are stable:
 
 - jQuery
-- Vanilla JavaScript (untested)
-- Node.js Module (untested)
+- Vanilla JavaScript
+- Node.js Module
 
 I wrote a really short blog post about the project a while ago, which can be read at [rthor.is/javascript/cross-plugin-javascript-project-isjs](http://rthor.is/javascript/cross-plugin-javascript-project-isjs/). *Note that some code examples are out of date*.
 
@@ -161,6 +161,14 @@ is('love', /.+/); // returns true
 ```
 
 ## Change Log
+
+### 0.2.1 *AUGUST 3, 2013*
+
+- Add a Luhn algorithm as a check function. Thanks everyone who pointed out the need for it.
+
+- Fix the README.
+
+- Rename the `regex` obj to `check`. It just makes more sense since we now have function tests.
 
 ### 0.2.0 *JULY 30, 2013*
 
