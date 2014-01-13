@@ -1,0 +1,31 @@
+<!DOCTYPE>
+<html>
+<head>
+    <script type="text/javascript" src="../components/chai/chai.js"></script>
+    <script type="text/javascript" src="../components/mocha/mocha.js"></script>
+    <script type="text/javascript">
+        // Set as test mode for proper configuration.
+        window._TEST_MODE = true;
+
+        mocha.setup('bdd');
+    </script>
+    <link rel="stylesheet" href="../components/mocha/mocha.css" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="../src/check.js"></script>
+    <script type="text/javascript" src="../jquery/jquery.is.js"></script>
+</head>
+</html>
+<body>
+<div id="mocha"></div>
+<!-- Include the actual tests. -->
+<script type="text/javascript" src="is.js"></script>
+
+<script type="text/javascript">
+    // Only tests run in real browser, injected script run if options.run == true
+    if (navigator.userAgent.indexOf('PhantomJS') < 0) {
+        mocha.run();
+    }
+</script>
+
+</body>
+</html>

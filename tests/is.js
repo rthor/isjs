@@ -31,7 +31,7 @@ describe('jQuery Plugin', function() {
 
 describe('Functions', function() {
 	it('Validates boolean values', function() {
-		check.fn.ok( true ).should.be.true;
+        check.fn.ok( true ).should.be.true;
 	});
 
 	it('regexp', function() {

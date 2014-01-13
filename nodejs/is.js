@@ -71,40 +71,28 @@ module.exports = function ( value, expression ) {
 	// Function object
 	check.fn = {
 		even: function ( num ) {
-			if ( isNaN( num ) ) num = num.parseInt( num, 10 );
-			return isNaN( num ) ? false : num === 0 || ( num % 2 ) === 0;
+			return !isNaN(num) && ( num % 2 === 0 );
 		},
 		function: function ( val ) {
 			return typeof val === 'function';
 		},
-		luhn: function ( num ) {
-			// Stringify the num
-			// Create an array and reverse it
-			num = (num + '').split('').reverse();
-
-			// Define variables for later use
-			var sum = 0, i, digit;
-
-			for( i = 0; i < num.length; i++) {
-				// Assign number to digit and multiply by 2 every odd num
-				digit = parseInt(num[ i ], 10) * ((i + 1) % 2 ? 1 : 2);
-
-				// Add to the sum but reduce by 9 if digit > 9
-				sum += digit > 9 ? digit - 9 : digit;
-			}
-
-			// Return boolean
-			return (sum % 10) === 0;
-		},
+        luhnSum: (function ( multiplier ) {
+            return function ( arr ) {
+                return arr.reduce(function (sum, n, i) {
+                    return sum + multiplier[ Number( Boolean(i % 2) ) ][n];
+                }, 0);
+            };
+        }([[0, 1, 2, 3, 4, 5, 6, 7, 8, 9], [0, 2, 4, 6, 8, 1, 3, 5, 7, 9]])),
+		luhn: function (num) {
+            var str = num + "",
+                sum = this.luhnSum( str.split("").reverse() );
+            return sum % 10 === 0;
+        },
 		odd: function ( num ) {
 			return !this.even( num );
 		},
 		ok: function ( val, expression ) {
-			if ( typeof val === 'string' ) {
-				return expression.test( val.trim() );
-			} else {
-				return !!val;
-			}
+            return ( typeof val === 'string' ) ? expression.test( val.trim() ) : !!val;
 		},
 		regexp: function ( val ) {
 			return val ? (typeof val === 'object' && toString.call(val) === '[object RegExp]') : false;

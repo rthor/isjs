@@ -1,0 +1,21 @@
+{
+    "name": "isjs",
+    "version": "0.2.1",
+    "homepage": "http://github.com/rthor/isjs",
+    "license": "MIT",
+    "homepage": "http://github.com/rthor/isjs",
+    "author": {
+        "name": "Ragnar Þór Valgeirsson (rthor)",
+        "email": "ragnar.valgeirsson@gmail.com",
+        "url": "http://rthor.is"
+    },
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components"
+    ],
+    "devDependencies": {
+        "chai": "~1.8.1",
+        "mocha": "~1.15.1"
+    }
+}

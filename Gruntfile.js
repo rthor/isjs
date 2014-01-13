@@ -12,6 +12,17 @@ module.exports = function (grunt) {
 	// Project configuration.
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
+        jshint: {
+            files: ['Gruntfile.js', 'src/check.js'],
+            options: {
+                globals: {
+                    jQuery: true,
+                    console: true,
+                    module: true,
+                    document: true
+                }
+            }
+        },
 		concat: {
 			options: {
 				banner: banner,
@@ -46,6 +57,11 @@ module.exports = function (grunt) {
 				}
 			}
 		},
+        mocha: {
+            test: {
+                src: ['tests/**/*.test.html']
+            }
+        },
 		uglify: {
 			options: {
 				banner: banner
@@ -56,13 +72,26 @@ module.exports = function (grunt) {
 					'vanilla/is.min.js': 'vanilla/is.js'
 				}
 			}
-		}
+		},
+        complexity: {
+            generic: {
+                src: 'src/check.js',
+                options: {
+                    errorsOnly: false,
+                    cyclomatic: 3,
+                    halstead: 8,
+                    maintainability: 100
+                }
+            }
+        }
 	});
 
-	// Load the plugin that provides the "uglify" task.
+    grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-complexity');
+    grunt.loadNpmTasks('grunt-mocha');
 
-	// Default task(s).
-	grunt.registerTask('default', ['concat', 'uglify']);
+	grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'mocha', 'complexity']);
+    // Default task(s).
 };
