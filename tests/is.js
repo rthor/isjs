@@ -169,13 +169,41 @@ describe("Regular expression keywords", function() {
 			check.zip['br'].test('25251-121').should.be.true;
 		});
 
+		it("Bulgaria", function() {
+			check.zip['bg'].test('5094').should.be.true;
+		});
+
 		it("Canada", function() {
 			check.zip['ca'].test('K2A 7B7').should.be.true;
 		});
 
-		it("Danmark", function() {
+		it("Croatia", function() {
+			check.zip['hr'].test('10000').should.be.true;
+		});
+
+		it("Cyprus", function() {
+			check.zip['cy'].test('8501').should.be.true;
+		});
+
+		it("Czech Republic", function() {
+			check.zip['cz'].test('160 00').should.be.true;
+		});
+
+		it("Denmark", function() {
 			check.zip['dk'].test('123').should.be.true;
 			check.zip['dk'].test('1234').should.be.true;
+		});
+
+		it("Estonia", function() {
+			check.zip['ee'].test('42106').should.be.true;
+		});
+
+		it("Finland", function() {
+			check.zip['fi'].test('55100').should.be.true;
+		});
+
+		it("France", function() {
+			check.zip['fr'].test('52110').should.be.true;
 		});
 
 		it("Germany", function() {
@@ -191,8 +219,11 @@ describe("Regular expression keywords", function() {
 			check.zip['gb'].test('hf63 5hh').should.be.true;
 		});
 
+		it("Greece", function() {
+			check.zip['gr'].test('681 00').should.be.true;
+		});
 
-		it("Hungry", function() {
+		it("Hungary", function() {
 			check.zip['hu'].test('1234').should.be.true;
 		});
 
@@ -208,17 +239,50 @@ describe("Regular expression keywords", function() {
 			check.zip['jp'].test('123-1234').should.be.true;
 		});
 
+		it("Latvia", function() {
+			check.zip['lv'].test('LV-3701').should.be.true;
+		});
+
+		it("Lithuania", function() {
+			check.zip['lt'].test('73461').should.be.true;
+		});
+
 		it("Luxembourg", function() {
 			check.zip['lu'].test('L-1234').should.be.true;
 		});
 
-		it("Nertherland", function() {
+		it("Malta", function() {
+			check.zip['mt'].test('BBG 1014').should.be.true;
+		});
+
+		it("Netherlands", function() {
 			check.zip['nl'].test('1234 aG').should.be.true;
 			check.zip['nl'].test('1234AA').should.be.true;
 		});
 
-		it("Polland", function() {
+		it("Norway", function() {
+			check.zip['no'].test('0001').should.be.true;
+		});
+
+		it("Poland", function() {
 			check.zip['pl'].test('12-123').should.be.true;
+		});
+
+		it("Portugal", function() {
+			check.zip['pt'].test('1050').should.be.true;
+		});
+
+		it("Romania", function() {
+			check.zip['ro'].test('827019').should.be.true;
+		});
+
+		it("Slovakia", function() {
+			check.zip['sk'].test('811 02').should.be.true;
+			check.zip['sk'].test('SK-811 02').should.be.true;
+		});
+
+		it("Slovenia", function() {
+			check.zip['si'].test('1233').should.be.true;
 		});
 
 		it("Spain", function() {
@@ -230,9 +294,18 @@ describe("Regular expression keywords", function() {
 			check.zip['se'].test('12312').should.be.true;
 			check.zip['se'].test('123 12').should.be.true;
 		});
+
+		it("Turkey", function() {
+			check.zip['tr'].test('21500').should.be.true;
+		});
+
 		it("United States of America", function() {
 			check.zip['us'].test('12135').should.be.true;
 			check.zip['us'].test('12135-4342').should.be.true;
+		});
+
+		if("Ukraine", function() {
+			check.zip['ua'].test('27420').should.be.true;
 		});
 	});
 });
