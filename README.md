@@ -108,15 +108,31 @@ Belgium (be)
 
 Brazil (br)
 
+Bulgaria (bg)
+
 Canada (ca)
 
-Danmark (dk)
+Croatia (hr)
+
+Cyprus (cy)
+
+Czech Republic (cz)
+
+Denmark (dk)
+
+Estonia (ee)
+
+Finland (fi)
+
+France (fr)
 
 Germany (de)
 
 Great Britain (gb)
 
-Hungry (hu)
+Greece (gr)
+
+Hungary (hu)
 
 Iceland (is)
 
@@ -124,17 +140,38 @@ Italy (it)
 
 Japan (jp)
 
+Latvia (lv)
+
+Lithuania (lt)
+
 Luxembourg (lu)
 
-Nertherland (nl)
+Malta (mt)
 
-Polland (pl)
+Netherlands (nl)
+
+Norway (no)
+
+Poland (pl)
+
+Portugal (pt)
+
+Romania (ro)
+
+Slovakia (sk)
+
+Slovenia (se)
 
 Spain (es)
 
 Sweden (se)
 
+Turkey (tr)
+
+Ukraine (ua)
+
 United States of America (us)
+
 
 ```javascript
 // Example (vanilla JS)
