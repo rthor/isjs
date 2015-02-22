@@ -304,7 +304,7 @@ describe("Regular expression keywords", function() {
 			check.zip['us'].test('12135-4342').should.be.true;
 		});
 
-		if("Ukraine", function() {
+		it("Ukraine", function() {
 			check.zip['ua'].test('27420').should.be.true;
 		});
 	});
